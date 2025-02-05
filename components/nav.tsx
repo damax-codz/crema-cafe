@@ -11,7 +11,7 @@ export function Nav({ openCart, itemCount }: { openCart: () => void; itemCount: 
   return (
     <nav className="fixed w-full z-50">
       <div
-        className={`w-full px-8 py-6 flex justify-between items-center ${isOpen ? "bg-espresso-800" : "bg-transparent"}`}
+        className={`w-full px-4 md:px-8 py-6 flex justify-between items-center ${isOpen ? "bg-espresso-800" : "bg-transparent"}`}
       >
         <Link href="/" className="text-cream-100 font-serif text-2xl font-bold">
           Crema Coffee House

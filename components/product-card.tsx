@@ -30,14 +30,17 @@ export function ProductCard({ product }: ProductCardProps) {
       className="group relative"
     >
       <div className="aspect-square overflow-hidden rounded-lg bg-white border border-espresso-100">
-        {/* <Image
-          src={product.image || "/placeholder.jpg"}
-          alt={product.name}
-          width={400}
-          height={400}
-          className="object-cover bg-gray-200 object-center transition-transform duration-300 group-hover:scale-105"
-        /> */}
-        <div className="w-full h-full bg-gray-200"></div>
+        {product.image ? (
+          <Image
+            src={product.image}
+            alt={product.name}
+            width={400}
+            height={400}
+            className="object-cover bg-white object-center transition-transform duration-300 group-hover:scale-105"
+          />
+        ) : (
+          <div className="w-full h-full bg-gray-200"></div>
+        )}
       </div>
       <div className="mt-2 space-y-2">
         <h3 className="text-lg font-medium text-espresso-700">
