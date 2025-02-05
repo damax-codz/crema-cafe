@@ -1,33 +1,33 @@
-import { useState } from "react"
-import { Plus, Minus } from "lucide-react"
-import { useCartStore } from "@/lib/store"
-import type { Product } from "@/lib/products"
+import { useState } from "react";
+import { Plus, Minus } from "lucide-react";
+import { useCartStore } from "@/lib/store";
+import { Product } from "@/data/products";
 
 interface AddToCartButtonProps {
-  product: Product
+  product: Product;
 }
 
 export function AddToCartButton({ product }: AddToCartButtonProps) {
-  const [quantity, setQuantity] = useState(0)
-  const { addItem, updateQuantity, removeItem } = useCartStore()
+  const [quantity, setQuantity] = useState(0);
+  const { addItem, updateQuantity, removeItem } = useCartStore();
 
   const handleAdd = () => {
     if (quantity === 0) {
-      addItem(product)
+      addItem(product);
     } else {
-      updateQuantity(product.id, quantity + 1)
+      updateQuantity(product.id, quantity + 1);
     }
-    setQuantity(quantity + 1)
-  }
+    setQuantity(quantity + 1);
+  };
 
   const handleRemove = () => {
     if (quantity === 1) {
-      removeItem(product.id)
+      removeItem(product.id);
     } else {
-      updateQuantity(product.id, quantity - 1)
+      updateQuantity(product.id, quantity - 1);
     }
-    setQuantity(Math.max(0, quantity - 1))
-  }
+    setQuantity(Math.max(0, quantity - 1));
+  };
 
   return (
     <div className="flex items-center space-x-2">
@@ -56,6 +56,5 @@ export function AddToCartButton({ product }: AddToCartButtonProps) {
         </button>
       )}
     </div>
-  )
+  );
 }
-
