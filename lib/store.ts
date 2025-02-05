@@ -1,5 +1,6 @@
+import { Product } from "@/data/products"
 import { create } from "zustand"
-import type { Product } from "./products"
+
 
 interface CartItem extends Product {
   quantity: number
